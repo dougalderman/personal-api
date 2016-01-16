@@ -15,13 +15,15 @@ app.get('/occupations', mainCtrl.getOccupations);
 app.get('/occupations/latest', mainCtrl.getLatestOccupation);
 app.get('/hobbies', mainCtrl.getHobbies);
 app.get('/hobbies/:type', mainCtrl.getTypeHobbies);
+app.get('/skillz', mainCtrl.getSkills);
+app.get('/secrets/:username/:pin', middleware.verifyUser, mainCtrl.getSecrets);
 
 app.put('/name', mainCtrl.updateName);
 app.put('/location', mainCtrl.updateLocation);
 
 app.post('/hobbies', mainCtrl.createHobby);
-app.post('/occupataions', mainCtrl.createOccupation);
-
+app.post('/occupations', mainCtrl.createOccupation);
+app.post('/skillz', mainCtrl.createSkillz);
 
 
 

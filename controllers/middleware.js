@@ -13,6 +13,19 @@ module.exports = {
         
         next();
         
-    }
-    
+    },
+    verifyUser: function(req, res, next) {
+        var username = req.params.username;
+        var pin = req.params.pin;
+        if ((username === 'admin123') && (pin === '4567')) {
+            next();
+        }
+        else {
+            res.status(401).json('Not authorized');
+        }
+        
+        
+        
+    },
+      
 }
